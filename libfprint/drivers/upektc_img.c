@@ -300,8 +300,8 @@ static void capture_read_data_cb(struct libusb_transfer *transfer)
 					fpi_ssm_jump_to_state(ssm, CAPTURE_ACK_00_28_TERM);
 					break;
 				case 0x1d:
-					/* too much horisontal movement */
-					fp_err("too much horisontal movement, aborting\n");
+					/* too much horizontal movement */
+					fp_err("too much horizontal movement, aborting\n");
 					fpi_imgdev_abort_scan(dev, FP_VERIFY_RETRY_CENTER_FINGER);
 					fpi_imgdev_report_finger_status(dev, FALSE);
 					fpi_ssm_jump_to_state(ssm, CAPTURE_ACK_00_28_TERM);

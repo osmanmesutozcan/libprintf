@@ -75,7 +75,7 @@ identified are necessarily the best available for the purpose.
 #cat: bozorth_main -         supports the matching scenario where a
 #cat:                        single probe fingerprint is to be matched
 #cat:                        to a single gallery fingerprint as in
-#cat:                        verificaiton mode
+#cat:                        verification mode
 
 ***********************************************************************/
 

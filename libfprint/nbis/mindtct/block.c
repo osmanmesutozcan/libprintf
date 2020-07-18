@@ -60,12 +60,12 @@ identified are necessarily the best available for the purpose.
 #cat:       extend inwards BLOCKSIZE units, overlapping the neighboring column
 #cat:       or row of blocks.  This routine also accounts for image padding
 #cat:       which makes things a little more "messy". This routine is primarily
-#cat:       responsible providing the ability to processs arbitrarily-sized
+#cat:       responsible providing the ability to processes arbitrarily-sized
 #cat:       images.  The strategy used here is simple, but others are possible.
 
    Input:
-      iw        - width (in pixels) of the orginal input image
-      ih        - height (in pixels) of the orginal input image
+      iw        - width (in pixels) of the original input image
+      ih        - height (in pixels) of the original input image
       pad       - the padding (in pixels) required to support the desired
                   range of block orientations for DFT analysis.  This padding
                   is required along the entire perimeter of the input image.

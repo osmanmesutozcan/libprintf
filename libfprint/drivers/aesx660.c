@@ -159,8 +159,8 @@ static void finger_det_read_fd_data_cb(struct libusb_transfer *transfer)
 
 	aesdev->fd_data_transfer = NULL;
 
-	if (transfer->status == LIBUSB_TRANSFER_CANCELLED) {
-		fp_dbg("Cancelling transfer...\n");
+	if (transfer->status == LIBUSB_TRANSFER_CANCELED) {
+		fp_dbg("Canceling transfer...\n");
 		fpi_ssm_next_state(ssm);
 		goto out;
 	}

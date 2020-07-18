@@ -244,7 +244,7 @@ int shape_from_contour(SHAPE **oshape, const int *contour_x,
       if(in_int_list(contour_x[i], row->xs, row->npts) < 0){
          /* If row is full ... */
          if(row->npts >= row->alloc){
-            /* This should never happen becuase we have allocated */
+            /* This should never happen because we have allocated */
             /* based on shape bounding limits.                    */
             fprintf(stderr,
                     "ERROR : shape_from_contour : row overflow\n");

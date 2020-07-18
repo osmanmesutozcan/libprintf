@@ -206,8 +206,8 @@ static void elan_cmd_cb(struct libusb_transfer *transfer)
 				elan_cmd_done(ssm);
 		}
 		break;
-	case LIBUSB_TRANSFER_CANCELLED:
-		fp_dbg("transfer cancelled");
+	case LIBUSB_TRANSFER_CANCELED:
+		fp_dbg("transfer canceled");
 		fpi_ssm_mark_aborted(ssm, -ECANCELED);
 		break;
 	case LIBUSB_TRANSFER_TIMED_OUT:
@@ -410,7 +410,7 @@ static void capture_complete(struct fpi_ssm *ssm)
 
 	/* When enrolling the lib won't restart the capture after a stage has
 	 * completed, so we need to keep feeding it images till it's had enough.
-	 * But after that it can't finalize enrollemnt until this callback exits.
+	 * But after that it can't finalize enrollment until this callback exits.
 	 * That's why we schedule elan_capture instead of running it directly. */
 	if (dev->dev->state == DEV_STATE_ENROLLING
 	    && !fpi_timeout_add(10, elan_capture_async, dev))

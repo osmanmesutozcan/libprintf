@@ -372,7 +372,7 @@ int free_path(const int x1, const int y1, const int x2, const int y2,
 /*************************************************************************
 **************************************************************************
 #cat: search_in_direction - Takes a specified maximum number of steps in a
-#cat:                specified direction looking for the first occurence of
+#cat:                specified direction looking for the first occurrence of
 #cat:                a pixel with specified value.  (Once found, adjustments
 #cat:                are potentially made to make sure the resulting pixel
 #cat:                and its associated edge pixel are 4-connected.)

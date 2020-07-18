@@ -477,7 +477,7 @@ static void init_read_data_cb(struct libusb_transfer *transfer)
 }
 
 /* TODO: use calibration table, datasheet is rather terse on that
- * need more info for implementaion */
+ * need more info for implementation */
 static void calibrate_read_data_cb(struct libusb_transfer *transfer)
 {
 	struct fpi_ssm *ssm = transfer->user_data;

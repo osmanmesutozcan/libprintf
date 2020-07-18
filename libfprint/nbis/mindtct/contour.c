@@ -67,7 +67,7 @@ identified are necessarily the best available for the purpose.
 #cat:            both lists of points are on the "edge".  The first set is
 #cat:            guaranteed 8-connected and the color of the feature.  The
 #cat:            second set is NOT guaranteed to be 8-connected and its points
-#cat:            are opposite the color of the feature.  Remeber that "feature"
+#cat:            are opposite the color of the feature.  Remember that "feature"
 #cat:            means either ridge-ending (black pixels) or valley-ending
 #cat:            (white pixels).
 
@@ -652,7 +652,7 @@ static int next_scan_nbr(const int nbr_i, const int scan_clock)
       /* Advance one neighbor counter-clockwise.         */
       /* There are 8 pixels in the neighborhood, so to   */
       /* decrement with wrapping from 0 around to 7, add */
-      /* the nieghbor index by 7 and mod with 8.         */
+      /* the neighbor index by 7 and mod with 8.         */
       new_i = (nbr_i+7)%8;
 
    /* Return the new neighbor index. */
@@ -714,9 +714,9 @@ static int next_contour_pixel(int *next_x_loc, int *next_y_loc,
    /* Get the feature's edge pixel value. */
    edge_pix = *(bdata + (cur_y_edge * iw) + cur_x_edge);
 
-   /* Get the nieghbor position of the feature's edge pixel in relationship */
+   /* Get the neighbor position of the feature's edge pixel in relationship */
    /* to the feature's actual position.                                     */
-   /* REMEBER: The feature's position is always interior and on a ridge     */
+   /* REMEMBER: The feature's position is always interior and on a ridge     */
    /* ending (black pixel) or (for bifurcations) on a valley ending (white  */
    /* pixel).  The feature's edge pixel is an adjacent pixel to the feature */
    /* pixel that is exterior to the ridge or valley ending and opposite in  */
@@ -828,7 +828,7 @@ static int next_contour_pixel(int *next_x_loc, int *next_y_loc,
 #cat:            and extracts a contour (up to a specified maximum length)
 #cat:            of the feature's edge in either a clockwise or counter-
 #cat:            clockwise direction.  A second point is specified, such that
-#cat:            if this point is encounted while extracting the contour,
+#cat:            if this point is encountered while extracting the contour,
 #cat:            it is to be assumed that a loop has been found and a code
 #cat:            of (LOOP_FOUND) is returned with the contour. By independently
 #cat:            specifying this point, successive calls can be made to
@@ -1225,7 +1225,7 @@ void fix_edge_pixel_pair(int *feat_x, int *feat_y, int *edge_x, int *edge_y,
    /* "edge" pixel be north, south, east, or west of   */
    /* of the feature point.  If the previous pixel is  */
    /* diagonal neighbor, then we need to adjust either */
-   /* the positon of te previous or current pixel.     */
+   /* the position of te previous or current pixel.     */
    if((abs(dx)==1) && (abs(dy)==1)){
       /* Then we have one of the 4 following conditions:  */
       /*                                                  */
@@ -1238,8 +1238,8 @@ void fix_edge_pixel_pair(int *feat_x, int *feat_y, int *edge_x, int *edge_y,
       /*                                                  */
       /* Want to test values in positions of '*':         */
       /*  Let point P == (px, py)                         */
-      /*           p1 == '*' positon where x changes      */
-      /*           p2 == '*' positon where y changes      */
+      /*           p1 == '*' position where x changes      */
+      /*           p2 == '*' position where y changes      */
       /*                                                  */
       /*  p1 = px+1,py    px+1,py   px-1,py    px-1,py    */
       /*  p2 = px,py-1    px,py+1   px,py+1    px,py-1    */

@@ -52,7 +52,7 @@ identified are necessarily the best available for the purpose.
 #cat: sum_rot_block_rows - Computes a vector or pixel row sums by sampling
 #cat:               the current image block at a given orientation.  The
 #cat:               sampling is conducted using a precomputed set of rotated
-#cat:               pixel offsets (called a grid) relative to the orgin of
+#cat:               pixel offsets (called a grid) relative to the origin of
 #cat:               the image block.
 
    Input:
@@ -135,7 +135,7 @@ static void dft_power(double *power, const int *rowsums,
 #cat:         of pixel row sums.  Each DFT wave form is then applied
 #cat:         individually to this vector of pixel row sums.  A DFT power
 #cat:         value is computed for each wave form (frequency0 at each
-#cat:         orientaion within the image block.  Therefore, the resulting DFT
+#cat:         orientation within the image block.  Therefore, the resulting DFT
 #cat:         power vectors are of dimension (N Waves X M Directions).
 #cat:         The power signatures derived form this process are used to
 #cat:         determine dominant direction flow within the image block.
@@ -143,7 +143,7 @@ static void dft_power(double *power, const int *rowsums,
    Input:
       pdata     - the padded input image.  It is important that the image
                   be properly padded, or else the sampling at various block
-                  orientations may result in accessing unkown memory.
+                  orientations may result in accessing unknown memory.
       blkoffset - the pixel offset form the origin of the padded image to
                   the origin of the current block in the image
       pw        - the width (in pixels) of the padded input image
@@ -199,9 +199,9 @@ int dft_dir_powers(double **powers, unsigned char *pdata,
 
 /*************************************************************************
 **************************************************************************
-#cat: get_max_norm - Analyses a DFT power vector for a specific wave form
+#cat: get_max_norm - Analyzes a DFT power vector for a specific wave form
 #cat:                applied at different orientations (directions) to the
-#cat:                current image block.  The routine retuns the maximum
+#cat:                current image block.  The routine returns the maximum
 #cat:                power value in the vector, the direction at which the
 #cat:                maximum occurs, and a normalized power value.  The
 #cat:                normalized power is computed as the maximum power divided
@@ -215,7 +215,7 @@ int dft_dir_powers(double **powers, unsigned char *pdata,
       ndirs      - the number of directions to which the wave form was applied
    Output:
       powmax     - the maximum power value in the DFT power vector
-      powmax_dir - the direciton at which the maximum power value occured
+      powmax_dir - the direciton at which the maximum power value occurred
       pownorm    - the normalized power corresponding to the maximum power
 **************************************************************************/
 static void get_max_norm(double *powmax, int *powmax_dir,
@@ -305,7 +305,7 @@ static int sort_dft_waves(int *wis, const double *powmaxs, const double *pownorm
 #cat: dft_power_stats - Derives statistics from a set of DFT power vectors.
 #cat:           Statistics are computed for all but the lowest frequency
 #cat:           wave form, including the Maximum power for each wave form,
-#cat:           the direction at which the maximum power occured, and a
+#cat:           the direction at which the maximum power occurred, and a
 #cat:           normalized value for the maximum power.  In addition, the
 #cat:           statistics are ranked in descending order based on normalized
 #cat:           squared maximum power.  These statistics are fundamental

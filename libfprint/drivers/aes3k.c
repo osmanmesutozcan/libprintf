@@ -75,7 +75,7 @@ static void img_cb(struct libusb_transfer *transfer)
 	struct fp_img *img;
 	int i;
 
-	if (transfer->status == LIBUSB_TRANSFER_CANCELLED) {
+	if (transfer->status == LIBUSB_TRANSFER_CANCELED) {
 		goto err;
 	} else if (transfer->status != LIBUSB_TRANSFER_COMPLETED) {
 		fpi_imgdev_session_error(dev, -EIO);

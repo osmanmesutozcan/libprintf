@@ -223,7 +223,7 @@ LFSPARMS g_lfsparms_V2 = {
    MAX_RIDGE_STEPS
 };
 
-/* Variables for conducting 8-connected neighbor analyses. */
+/* Variables for conducting 8-connected neighbor analyzes. */
 /* Pixel neighbor offsets:  0  1  2  3  4  5  6  7  */     /* 7 0 1 */
 int g_nbr8_dx[] =          {  0, 1, 1, 1, 0,-1,-1,-1 };      /* 6 C 2 */
 int g_nbr8_dy[] =          { -1,-1, 0, 1, 1, 1, 0,-1 };      /* 5 4 3 */
