@@ -246,7 +246,7 @@ int init_dftwaves(DFTWAVES **optr, const double *dft_coefs,
 **************************************************************************
 #cat: get_max_padding_V2 - Deterines the maximum amount of image pixel padding
 #cat:         required by all LFS (Version 2) processes.  Padding is currently
-#cat:         required by the rotated grids used in DFT analyses and in
+#cat:         required by the rotated grids used in DFT analyzes and in
 #cat:         directional binarization.  The NIST generalized code enables
 #cat:         the parameters governing these processes to be redefined, so a
 #cat:         check at runtime is required to determine which process
@@ -256,8 +256,8 @@ int init_dftwaves(DFTWAVES **optr, const double *dft_coefs,
 
    Input:
       map_windowsize  - the size (in pixels) of each window centered about
-                        each block in the image used in DFT analyses
-      map_windowoffset - the offset (in pixels) from the orgin of the
+                        each block in the image used in DFT analyzes
+      map_windowoffset - the offset (in pixels) from the origin of the
                         surrounding window to the origin of the block
       dirbin_grid_w   - the width (in pixels) of the rotated grids used in
                         directional binarization
@@ -274,7 +274,7 @@ int get_max_padding_V2(const int map_windowsize, const int map_windowoffset,
    double pad;
 
 
-   /* 1. Compute pad required for rotated windows used in DFT analyses. */
+   /* 1. Compute pad required for rotated windows used in DFT analyzes. */
 
    /* Explanation of DFT padding:
 
@@ -350,7 +350,7 @@ int get_max_padding_V2(const int map_windowsize, const int map_windowoffset,
 **************************************************************************
 #cat: init_rotgrids - Allocates and initializes a set of offsets that address
 #cat:                 individual rotated pixels within a grid.
-#cat:                 These rotated grids are used to conduct DFT analyses
+#cat:                 These rotated grids are used to conduct DFT analyzes
 #cat:                 on blocks of input image data, and they are used
 #cat:                 in isotropic binarization.
 
@@ -619,7 +619,7 @@ int alloc_dir_powers(double ***opowers, const int nwaves, const int ndirs)
 #cat:             wave form, so the length of the statistics arrays is 1 less
 #cat:             than the number of DFT wave forms used.  The staistics
 #cat:             include the Maximum power for each wave form, the direction
-#cat:             at which the maximum power occured, and a normalized value
+#cat:             at which the maximum power occurred, and a normalized value
 #cat:             for the maximum power.  In addition, the statistics are
 #cat:             ranked in descending order based on normalized squared
 #cat:             maximum power.

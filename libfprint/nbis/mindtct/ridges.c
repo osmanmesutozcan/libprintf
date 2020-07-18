@@ -112,7 +112,7 @@ static int insert_neighbor(const int pos, const int nbr_index, const double nbr_
 
    /* While we havn't reached the desired insertion point ... */
    while(i >= pos){
-      /* Shift the current neighbor down the list 1 positon. */
+      /* Shift the current neighbor down the list 1 position. */
       nbr_list[i+1] = nbr_list[i];
       nbr_sqr_dists[i+1] = nbr_sqr_dists[i];
       i--;
@@ -503,7 +503,7 @@ static int validate_ridge_crossing(const int ridge_start, const int ridge_end,
    /* If the trace was IGNORED, then we had some sort of initialization */
    /* problem, so treat this the same as if was actually located the    */
    /* ridge start point (in which case LOOP_FOUND is returned).         */
-   /* So, If not IGNORED and ridge start not encounted in trace ...     */
+   /* So, If not IGNORED and ridge start not encountered in trace ...     */
    if((ret != IGNORE) &&
       (ret != LOOP_FOUND)){
 
@@ -526,7 +526,7 @@ static int validate_ridge_crossing(const int ridge_start, const int ridge_end,
       if(ret != IGNORE)
          free_contour(contour_x, contour_y, contour_ex, contour_ey);
 
-      /* If trace not IGNORED and ridge start not encounted in 2nd trace ... */
+      /* If trace not IGNORED and ridge start not encountered in 2nd trace ... */
       if((ret != IGNORE) &&
          (ret != LOOP_FOUND)){
          /* If we get here, assume we have a ridge crossing. */
@@ -658,7 +658,7 @@ static int ridge_count(const int first, const int second, MINUTIAE *minutiae,
       /* Conduct the validation, tracing the contour of the ridge  */
       /* from the ridge ending point a specified number of steps   */
       /* scanning for neighbors clockwise and counter-clockwise.   */
-      /* If the ridge starting point is encounted during the trace */
+      /* If the ridge starting point is encountered during the trace */
       /* then we can assume we do not have a valid ridge crossing  */
       /* and instead we are walking on and off the edge of the     */
       /* side of a ridge.                                          */

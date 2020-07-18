@@ -58,7 +58,7 @@ struct img_transfer_data {
 	int idx;
 	struct fp_img_dev *dev;
 	gboolean flying;
-	gboolean cancelling;
+	gboolean canceling;
 };
 
 enum sonly_kill_transfers_action {
@@ -217,13 +217,13 @@ static void cancel_img_transfers(struct fp_img_dev *dev)
 
 	for (i = 0; i < NUM_BULK_TRANSFERS; i++) {
 		struct img_transfer_data *idata = &sdev->img_transfer_data[i];
-		if (!idata->flying || idata->cancelling)
+		if (!idata->flying || idata->canceling)
 			continue;
-		fp_dbg("cancelling transfer %d", i);
+		fp_dbg("canceling transfer %d", i);
 		int r = libusb_cancel_transfer(sdev->img_transfer[i]);
 		if (r < 0)
 			fp_dbg("cancel failed error %d", r);
-		idata->cancelling = TRUE;
+		idata->canceling = TRUE;
 	}
 }
 
@@ -308,7 +308,7 @@ static void row_complete(struct fp_img_dev *dev)
 			 *
 			 * Typical problem spot: one brief touch before starting the
 			 * actual scan. Happens most commonly if scan is started
-			 * from before the first joint resulting in a gap after the inital touch.
+			 * from before the first joint resulting in a gap after the initial touch.
 			 */
 			if (sdev->num_blank > FINGER_REMOVED_THRESHOLD) {
 				sdev->finger_state = FINGER_REMOVED;
@@ -484,7 +484,7 @@ static void img_data_cb(struct libusb_transfer *transfer)
 	int i;
 
 	idata->flying = FALSE;
-	idata->cancelling = FALSE;
+	idata->canceling = FALSE;
 	sdev->num_flying--;
 
 	if (sdev->killing_transfers) {

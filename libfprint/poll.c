@@ -49,7 +49,7 @@
  *
  * If there are no events pending, fp_handle_events() will block for a few
  * seconds (and will handle any new events should anything occur in that time).
- * If you wish to customise this timeout, you can use
+ * If you wish to customize this timeout, you can use
  * fp_handle_events_timeout() instead. If you wish to do a nonblocking
  * iteration, call fp_handle_events_timeout() with a zero timeout.
  *

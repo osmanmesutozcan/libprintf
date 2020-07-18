@@ -673,7 +673,7 @@ typedef struct lfsparms{
 #define RELATIVE2ORIGIN          1
 
 /* Truncate floating point precision by multiply, rounding, and then */
-/* dividing by this value.  This enables consistant results across   */
+/* dividing by this value.  This enables consistent results across   */
 /* different computer architectures.                                 */
 #define TRUNC_SCALE          16384.0
 

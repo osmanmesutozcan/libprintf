@@ -420,8 +420,8 @@ static void interrupt_callback(struct libusb_transfer *transfer)
 
 	vdev->wait_interrupt = 0;
 
-	/* When we have cancelled transfer, error is ok actually */
-	if (!vdev->active && error == LIBUSB_TRANSFER_CANCELLED)
+	/* When we have canceled transfer, error is ok actually */
+	if (!vdev->active && error == LIBUSB_TRANSFER_CANCELED)
 		return;
 
 	if (error != 0) {

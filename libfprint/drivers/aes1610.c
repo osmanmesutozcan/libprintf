@@ -419,7 +419,7 @@ static unsigned char list_BD_values[10] = {
 /*
  * Adjust the gain according to the histogram data
  * 0xbd, 0xbe, 0x29 and 0x2A registers are affected
- * Returns 0 if no problem occured
+ * Returns 0 if no problem occurred
  * TODO: This is a basic support for gain. It needs testing/tweaking.  */
 static int adjust_gain(unsigned char *buffer, int status)
 {

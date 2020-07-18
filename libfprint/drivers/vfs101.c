@@ -75,7 +75,7 @@
 #define VFS_PAR_INFO_CONTRAST	0x0077
 #define VFS_PAR_0078			0x0078
 
-/* Device regiones address */
+/* Device regions address */
 #define VFS_REG_IMG_EXPOSURE	0xff500e
 #define VFS_REG_IMG_CONTRAST	0xff5038
 
@@ -759,7 +759,7 @@ static void img_copy(struct vfs101_dev *vdev, struct fp_img *img)
 	}
 }
 
-/* Extract fingerpint image from raw data */
+/* Extract fingerprint image from raw data */
 static void img_extract(struct fpi_ssm *ssm)
 {
 	struct fp_img_dev *dev = ssm->priv;
@@ -1198,7 +1198,7 @@ static void m_init_state(struct fpi_ssm *ssm)
 	switch (ssm->cur_state)
 	{
 	case M_INIT_0_RECV_DIRTY:
-		/* Recv eventualy dirty data */
+		/* Recv eventually dirty data */
 		vdev->ignore_error = TRUE;
 		async_recv(ssm);
 		break;
@@ -1485,7 +1485,7 @@ static void dev_deactivate(struct fp_img_dev *dev)
 	/* Reset active state */
 	vdev->active = FALSE;
 
-	/* Handle eventualy existing events */
+	/* Handle eventually existing events */
 	while (vdev->transfer || vdev->timeout)
 		fp_handle_events();
 

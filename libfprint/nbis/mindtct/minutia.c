@@ -716,7 +716,7 @@ void dump_minutiae_pts(FILE *fpout, const MINUTIAE *minutiae)
 {
    int i;
 
-   /* First line in the output file contians the number of minutia */
+   /* First line in the output file contains the number of minutia */
    /* points to be written to the file.                            */
    fprintf(fpout, "%d\n", minutiae->num);
 
@@ -755,7 +755,7 @@ void dump_reliable_minutiae_pts(FILE *fpout, const MINUTIAE *minutiae,
          count++;
    }
 
-   /* First line in the output file contians the number of minutia */
+   /* First line in the output file contains the number of minutia */
    /* points to be written to the file.                            */
    fprintf(fpout, "%d\n", count);
 
@@ -907,7 +907,7 @@ int remove_minutia(const int index, MINUTIAE *minutiae)
 
 /*************************************************************************
 **************************************************************************
-#cat: join_minutia - Takes 2 minutia points and connectes their features in
+#cat: join_minutia - Takes 2 minutia points and connects their features in
 #cat:                the input binary image.  A line is drawn in the image
 #cat:                between the 2 minutia with a specified line-width radius
 #cat:                and a conditional border of pixels opposite in color
@@ -1074,7 +1074,7 @@ int minutia_type(const int feature_pix)
 **************************************************************************
 #cat: is_minutia_appearing - Given the pixel location of a minutia feature
 #cat:            and its corresponding adjacent edge pixel, returns whether
-#cat:            the minutia is appearing or disappearing.  Remeber, that
+#cat:            the minutia is appearing or disappearing.  Remember, that
 #cat:            "feature" refers to either a ridge or valley-ending.
 
    Input:
@@ -1142,7 +1142,7 @@ int choose_scan_direction(const int imapval, const int ndirs)
    /* (ie. HORIZONTALLY).                                         */
    if((imapval <= qtr_ndirs) || (imapval > (qtr_ndirs*3)))
       return(SCAN_HORIZONTAL);
-   /* Otherwise, ridge flow is realtively horizontal, and we want */
+   /* Otherwise, ridge flow is relatively horizontal, and we want */
    /* to scan for minutia features in the opposite direction      */
    /* (ie. VERTICALLY).                                           */
    else
@@ -3322,7 +3322,7 @@ int adjust_high_curvature_minutia_V2(int *oidir, int *ox_loc, int *oy_loc,
 
 /*************************************************************************
 **************************************************************************
-#cat: get_low_curvature_direction - Converts a bi-direcitonal IMAP direction
+#cat: get_low_curvature_direction - Converts a bi-directional IMAP direction
 #cat:            (based on a semi-circle) to a uni-directional value covering
 #cat:            a full circle based on the scan orientation used to detect
 #cat:            a minutia feature (horizontal or vertical) and whether the

@@ -120,7 +120,7 @@ static int lfs_detect_minutiae_V2(MINUTIAE **ominutiae,
       return(ret);
    }
 
-   /* Initialize wave form lookup tables for DFT analyses. */
+   /* Initialize wave form lookup tables for DFT analyzes. */
    /* used for direction binarization.                             */
    if((ret = init_dftwaves(&dftwaves, g_dft_coefs, lfsparms->num_dft_waves,
                         lfsparms->windowsize))){
@@ -130,7 +130,7 @@ static int lfs_detect_minutiae_V2(MINUTIAE **ominutiae,
    }
 
    /* Initialize lookup table for pixel offsets to rotated grids */
-   /* used for DFT analyses.                                     */
+   /* used for DFT analyzes.                                     */
    if((ret = init_rotgrids(&dftgrids, iw, ih, maxpad,
                         lfsparms->start_dir_angle, lfsparms->num_directions,
                         lfsparms->windowsize, lfsparms->windowsize,
@@ -169,7 +169,7 @@ static int lfs_detect_minutiae_V2(MINUTIAE **ominutiae,
    }
 
    /* Scale input image to 6 bits [0..63] */
-   /* !!! Would like to remove this dependency eventualy !!!     */
+   /* !!! Would like to remove this dependency eventually !!!     */
    /* But, the DFT computations will need to be changed, and     */
    /* could not get this work upon first attempt. Also, if not   */
    /* careful, I think accumulated power magnitudes may overflow */

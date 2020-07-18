@@ -386,8 +386,8 @@ static void irq_handler(struct libusb_transfer *transfer)
 	uint16_t type;
 	int r = 0;
 
-	if (transfer->status == LIBUSB_TRANSFER_CANCELLED) {
-		fp_dbg("cancelled");
+	if (transfer->status == LIBUSB_TRANSFER_CANCELED) {
+		fp_dbg("canceled");
 		if (urudev->irqs_stopped_cb)
 			urudev->irqs_stopped_cb(dev);
 		urudev->irqs_stopped_cb = NULL;
@@ -500,7 +500,7 @@ static int dev_change_state(struct fp_img_dev *dev, enum fp_imgdev_state state)
 	case IMGDEV_STATE_CAPTURE:
 		break;
 	default:
-		fp_err("unrecognised state %d", state);
+		fp_err("unrecognized state %d", state);
 		return -EINVAL;
 	}
 
@@ -596,8 +596,8 @@ static void image_transfer_cb(struct libusb_transfer *transfer)
 {
 	struct fpi_ssm *ssm = transfer->user_data;
 
-	if (transfer->status == LIBUSB_TRANSFER_CANCELLED) {
-		fp_dbg("cancelled");
+	if (transfer->status == LIBUSB_TRANSFER_CANCELED) {
+		fp_dbg("canceled");
 		fpi_ssm_mark_aborted(ssm, -ECANCELED);
 	} else if (transfer->status != LIBUSB_TRANSFER_COMPLETED) {
 		fp_dbg("error");
@@ -846,7 +846,7 @@ static void imaging_complete(struct fpi_ssm *ssm)
 /* After closing an app and setting hwstat to 0x80, my ms keyboard gets in a
  * confused state and returns hwstat 0x85. On next app run, we don't get the
  * 56aa interrupt. This is the best way I've found to fix it: mess around
- * with hwstat until it starts returning more recognisable values. This
+ * with hwstat until it starts returning more recognizable values. This
  * doesn't happen on my other devices: uru4000, uru4000b, ms fp rdr v2 
  *
  * The windows driver copes with this OK, but then again it uploads firmware
@@ -1302,7 +1302,7 @@ static int dev_init(struct fp_img_dev *dev, unsigned long driver_data)
 	if (ep->bEndpointAddress != EP_INTR
 			|| (ep->bmAttributes & LIBUSB_TRANSFER_TYPE_MASK) !=
 				LIBUSB_TRANSFER_TYPE_INTERRUPT) {
-		fp_err("unrecognised interrupt endpoint");
+		fp_err("unrecognized interrupt endpoint");
 		r = -ENODEV;
 		goto out;
 	}
@@ -1311,7 +1311,7 @@ static int dev_init(struct fp_img_dev *dev, unsigned long driver_data)
 	if (ep->bEndpointAddress != EP_DATA
 			|| (ep->bmAttributes & LIBUSB_TRANSFER_TYPE_MASK) !=
 				LIBUSB_TRANSFER_TYPE_BULK) {
-		fp_err("unrecognised bulk endpoint");
+		fp_err("unrecognized bulk endpoint");
 		r = -ENODEV;
 		goto out;
 	}
@@ -1324,10 +1324,10 @@ static int dev_init(struct fp_img_dev *dev, unsigned long driver_data)
 		goto out;
 	}
 
-	/* Initialise NSS early */
+	/* Initialize NSS early */
 	rv = NSS_NoDB_Init(".");
 	if (rv != SECSuccess) {
-		fp_err("could not initialise NSS");
+		fp_err("could not initialize NSS");
 		goto out;
 	}
 

@@ -31,7 +31,7 @@ identified are necessarily the best available for the purpose.
       UPDATED: 03/16/2005 by MDG
 
       Contains routines responsible for binarizing a grayscale image based
-      on an arbitrarily-sized image and its precomputed direcitonal ridge
+      on an arbitrarily-sized image and its precomputed directional ridge
       flow (IMAP) as part of the NIST Latent Fingerprint System (LFS).
 
 ***********************************************************************
@@ -187,7 +187,7 @@ int binarize_image_V2(unsigned char **odata, int *ow, int *oh,
 
    CAUTION: The image to which the input pixel points must be appropriately
             padded to account for the radius of the rotated grid.  Otherwise,
-            this routine may access "unkown" memory.
+            this routine may access "unknown" memory.
 
    Input:
       pptr        - pointer to current grayscale pixel

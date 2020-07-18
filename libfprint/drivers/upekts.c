@@ -1056,7 +1056,7 @@ static void e_handle_resp00(struct fp_dev *dev, unsigned char *data,
 		 * have nothing to do here */
 		break;
 	default:
-		fp_err("unrecognised scan status code %02x", status);
+		fp_err("unrecognized scan status code %02x", status);
 		result = -EPROTO;
 		break;
 	}
@@ -1085,7 +1085,7 @@ static void e_handle_resp02(struct fp_dev *dev, unsigned char *data,
 	if (data_len < sizeof(scan_comp)) {
 		fp_err("fingerprint data too short (%d bytes)", data_len);
 	} else if (memcmp(data, scan_comp, sizeof(scan_comp)) != 0) {
-		fp_err("unrecognised data prefix %x %x %x %x %x",
+		fp_err("unrecognized data prefix %x %x %x %x %x",
 			data[0], data[1], data[2], data[3], data[4]);
 	} else {
 		fdata = fpi_print_data_new(dev);
@@ -1322,7 +1322,7 @@ static void v_handle_resp00(struct fp_dev *dev, unsigned char *data,
 		r = FP_VERIFY_RETRY_CENTER_FINGER;
 		break;
 	default:
-		fp_err("unrecognised verify status code %02x", status);
+		fp_err("unrecognized verify status code %02x", status);
 		r = -EPROTO;
 	}
 
@@ -1349,7 +1349,7 @@ static void v_handle_resp03(struct fp_dev *dev, unsigned char *data,
 	} else if (data[1] == 0x01) {
 		r = FP_VERIFY_MATCH;
 	} else {
-		fp_err("unrecognised verify result %02x", data[1]);
+		fp_err("unrecognized verify result %02x", data[1]);
 		r = -EPROTO;
 	}
 	fpi_drvcb_report_verify_result(dev, r, NULL);

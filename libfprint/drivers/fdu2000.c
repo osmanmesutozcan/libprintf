@@ -111,12 +111,12 @@ static const struct fdu2000_req {
 };
 
 /*
- * Write a command and verify reponse
+ * Write a command and verify response
  */
 static gint
 bulk_write_safe(libusb_dev_handle *dev, req_index rIndex) {
 
-	gchar reponse[ACK_LEN];
+	gchar response[ACK_LEN];
 	gint r;
 	gchar *cmd = (gchar *)fdu_req[rIndex].cmd;
 	gchar *ack = (gchar *)fdu_req[rIndex].ack;
@@ -128,8 +128,8 @@ bulk_write_safe(libusb_dev_handle *dev, req_index rIndex) {
 	};
 	struct libusb_bulk_transfer readmsg = {
 		.endpoint = EP_REPLY,
-		.data = reponse,
-		.length = sizeof(reponse),
+		.data = response,
+		.length = sizeof(response),
 	};
 	int trf;
 
@@ -145,7 +145,7 @@ bulk_write_safe(libusb_dev_handle *dev, req_index rIndex) {
 	if (r < 0)
 		return r;
 
-	if (!strncmp(ack, reponse, ack_len))
+	if (!strncmp(ack, response, ack_len))
 		return 0;
 	
 	fp_err("Expected different ACK from dev");

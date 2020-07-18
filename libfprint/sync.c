@@ -38,7 +38,7 @@ static void sync_open_cb(struct fp_dev *dev, int status, void *user_data)
 }
 
 /** \ingroup dev
- * Opens and initialises a device. This is the function you call in order
+ * Opens and initializes a device. This is the function you call in order
  * to convert a \ref dscv_dev "discovered device" into an actual device handle
  * that you can perform operations with.
  * \param ddev the discovered device to open
@@ -135,7 +135,7 @@ static void enroll_stop_cb(struct fp_dev *dev, void *user_data)
  * or I/O problems.
  *
  * The RETRY codes from #fp_enroll_result may be returned from any enroll
- * stage. These codes indicate that the scan was not succesful in that the
+ * stage. These codes indicate that the scan was not successful in that the
  * user did not position their finger correctly or similar. When a RETRY code
  * is returned, the enrollment stage is <b>not</b> advanced, so the next call
  * into this function will retry the current stage again. The current stage may
@@ -256,7 +256,7 @@ API_EXPORTED int fp_enroll_finger_img(struct fp_dev *dev,
 		final = TRUE;
 		break;
 	default:
-		fp_err("unrecognised return code %d", r);
+		fp_err("unrecognized return code %d", r);
 		dev->__enroll_stage = -1;
 		r = -EINVAL;
 		final = TRUE;
@@ -378,7 +378,7 @@ API_EXPORTED int fp_verify_finger_img(struct fp_dev *dev,
 		fp_dbg("scan failed, remove finger and retry");
 		break;
 	default:
-		fp_err("unrecognised return code %d", r);
+		fp_err("unrecognized return code %d", r);
 		r = -EINVAL;
 	}
 
@@ -497,7 +497,7 @@ API_EXPORTED int fp_identify_finger_img(struct fp_dev *dev,
 		fp_dbg("scan failed, remove finger and retry");
 		break;
 	default:
-		fp_err("unrecognised return code %d", r);
+		fp_err("unrecognized return code %d", r);
 		r = -EINVAL;
 	}
 
@@ -595,7 +595,7 @@ API_EXPORTED int fp_dev_img_capture(struct fp_dev *dev, int unconditional,
 		fp_dbg("result: fail");
 		break;
 	default:
-		fp_err("unrecognised return code %d", r);
+		fp_err("unrecognized return code %d", r);
 		r = -EINVAL;
 	}
 

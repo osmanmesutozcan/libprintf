@@ -191,7 +191,7 @@ int gen_image_maps(int **odmap, int **olcmap, int **olfmap, int **ohcmap,
 #cat: gen_initial_maps - Creates an initial Direction Map from the given
 #cat:             input image.  It very important that the image be properly
 #cat:             padded so that rotated grids along the boundary of the image
-#cat:             do not access unkown memory.  The rotated grids are used by a
+#cat:             do not access unknown memory.  The rotated grids are used by a
 #cat:             DFT-based analysis to determine the integer directions
 #cat:             in the map. Typically this initial vector of directions will
 #cat:             subsequently have weak or inconsistent directions removed
@@ -201,7 +201,7 @@ int gen_image_maps(int **odmap, int **olcmap, int **olfmap, int **ohcmap,
 #cat:             The Low Contrast Map flags blocks in the image with
 #cat:             insufficient contrast.  Blocks with low contrast have a
 #cat:             corresponding direction of INVALID in the Direction Map.
-#cat:             The Low Flow Map flags blocks in which the DFT analyses
+#cat:             The Low Flow Map flags blocks in which the DFT analyzes
 #cat:             could not determine a significant ridge flow.  Blocks with
 #cat:             low ridge flow also have a corresponding direction of
 #cat:             INVALID in the Direction Map.
@@ -937,7 +937,7 @@ int gen_high_curve_map(int **ohcmap, int *direction_map,
 #cat: gen_initial_imap - Creates an initial IMAP from the given input image.
 #cat:             It very important that the image be properly padded so
 #cat:             that rotated grids along the boudary of the image do not
-#cat:             access unkown memory.  The rotated grids are used by a
+#cat:             access unknown memory.  The rotated grids are used by a
 #cat:             DFT-based analysis to determine the integer directions
 #cat:             in the IMAP. Typically this initial vector of directions will
 #cat:             subsequently have weak or inconsistent directions removed
@@ -1166,7 +1166,7 @@ int primary_dir_test(double **powers, const int *wis,
 #cat:                    an IMAP integer direction from a set of DFT results
 #cat:                    computed from a block of image data.  This test
 #cat:                    analyzes the strongest power statistics associated
-#cat:                    with a given frequency and direction and analyses
+#cat:                    with a given frequency and direction and analyzes
 #cat:                    small changes in direction to the left and right to
 #cat:                    determine if the block contains a "fork".
 
@@ -1693,7 +1693,7 @@ int remove_dir(int *imap, const int mx, const int my,
       return(1);
    }
 
-   /* If stregnth of average neighbor direction is large enough to */
+   /* If strength of average neighbor direction is large enough to */
    /* put credence in ... (Ex. thresh==0.2)                        */
    if(dir_strength >= lfsparms->dir_strength_min){
 
@@ -1745,7 +1745,7 @@ int remove_dir(int *imap, const int mx, const int my,
       dir2rad   - lookup table for converting integer directions
    Output:
       avrdir    - the average direction computed from neighbors
-      dir_strenght - the strength of the average direction
+      dir_strength - the strength of the average direction
       nvalid    - the number of valid directions used to compute the
                   average
 **************************************************************************/

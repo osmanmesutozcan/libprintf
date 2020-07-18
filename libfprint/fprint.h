@@ -163,7 +163,7 @@ int fp_enroll_finger_img(struct fp_dev *dev, struct fp_print_data **print_data,
  * Performs an enroll stage. See \ref enrolling for an explanation of enroll
  * stages. This function is just a shortcut to calling fp_enroll_finger_img()
  * with a NULL image parameter. Be sure to read the description of
- * fp_enroll_finger_img() in order to understand its behaviour.
+ * fp_enroll_finger_img() in order to understand its behavior.
  *
  * \param dev the device
  * \param print_data a location to return the resultant enrollment data from

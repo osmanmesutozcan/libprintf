@@ -84,13 +84,13 @@ GSList *opened_devices = NULL;
  *  - The system compares the finger I just scanned to the one that was
  *    enrolled earlier. If the system decides that the fingerprints match,
  *    I am successfully logged in. Otherwise, the system informs me that I am
- *    not authorised to login as that user.
+ *    not authorized to login as that user.
  *
  * \section identification Identification
  *
  * Identification is the process of comparing a freshly scanned fingerprint
  * to a <em>collection</em> of previously enrolled fingerprints. For example,
- * imagine there are 100 people in an organisation, and they all have enrolled
+ * imagine there are 100 people in an organization, and they all have enrolled
  * their fingerprints. One user walks up to a fingerprint scanner and scans
  * their finger. With <em>no other knowledge</em> of who that user might be,
  * the system examines their fingerprint, looks in the database, and determines
@@ -190,7 +190,7 @@ GSList *opened_devices = NULL;
  *
  * Some devices require the user to scan their finger multiple times in
  * order to complete the enrollment process. libfprint must return control
- * to your application inbetween each scan in order for your application to
+ * to your application between each scan in order for your application to
  * instruct the user to swipe their finger again. Each scan is referred to
  * as a stage, so a device that requires 3 scans for enrollment corresponds
  * to you running 3 enrollment stages using libfprint.
@@ -627,7 +627,7 @@ enum fp_print_data_type fpi_driver_get_data_type(struct fp_driver *drv)
 	case DRIVER_IMAGING:
 		return PRINT_DATA_NBIS_MINUTIAE;
 	default:
-		fp_err("unrecognised drv type %d", drv->type);
+		fp_err("unrecognized drv type %d", drv->type);
 		return PRINT_DATA_RAW;
 	}
 }
@@ -913,7 +913,7 @@ API_EXPORTED void fp_set_debug(int level)
 }
 
 /** \ingroup core
- * Initialise libfprint. This function must be called before you attempt to
+ * Initialize libfprint. This function must be called before you attempt to
  * use the library in any way.
  * \return 0 on success, non-zero on error.
  */

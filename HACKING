@@ -78,7 +78,7 @@ Documentation
 All additions of public API functions must be accompanied with doxygen
 comments.
 
-All changes which potentially change the behaviour of the public API must
+All changes which potentially change the behavior of the public API must
 be reflected by updating the appropriate doxygen comments.
 
 

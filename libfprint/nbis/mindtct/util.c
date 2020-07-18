@@ -180,7 +180,7 @@ int minmaxs(int **ominmax_val, int **ominmax_type, int **ominmax_i,
    /* Initialize number of min/max to 0. */
    minmax_num = 0;
 
-   /* Start witht the first item in the list. */
+   /* Start with the first item in the list. */
    i = 0;
 
    /* Get starting state between first pair of items. */
